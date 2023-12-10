@@ -27,6 +27,11 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @RestController
 public class BoletoController {
+    
+    @GetMapping("/")
+    public String teste() {
+        return "Top. A aplicação ta up XD";
+    }
 
     @GetMapping("/generate")
     public void downloadPdf(@RequestParam final Map<String, String> parameters, final HttpServletResponse response)

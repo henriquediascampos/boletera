@@ -1,6 +1,6 @@
 # Boletera - Aplicação Java Web para Geração de Boletos
 
-A aplicação Boletera é uma aplicação Java Web desenvolvida com o framework Spring Boot que permite a geração de boletos utilizando o JasperReports. Esta aplicação recebe parâmetros via requisição HTTP e retorna o boleto gerado em formato PDF como resposta.
+A aplicação Boletera é uma aplicação Java Web desenvolvida com o framework Spring Boot que permite a geração de boletos/carnês utilizando o JasperReports. Esta aplicação recebe parâmetros via requisição HTTP e retorna o boleto gerado em formato PDF como resposta.
 
 ## Como Funciona
 
@@ -37,7 +37,7 @@ A resposta da requisição é o boleto gerado em formato PDF. O PDF é retornado
 Aqui está um exemplo de como gerar um boleto através de uma requisição cURL:
 
 ```bash
-curl -o boleto.pdf "http://localhost:8080/generate?valor_total=1000.00&referencia=123456&emissor=EmpresaX&total_parcelas=12&data_inicio=2023-01-01"
+curl -o boleto.pdf "http://localhost:7575/boletera/generate?valor_total=1000.00&referencia=123456&emissor=EmpresaX&total_parcelas=12&data_inicio=2023-01-01"
 ```
 
 O arquivo `boleto.pdf` será gerado no diretório atual.
@@ -45,6 +45,8 @@ O arquivo `boleto.pdf` será gerado no diretório atual.
 ## Configuração do Projeto
 
 O projeto utiliza o [Spring Boot](https://spring.io/projects/spring-boot) para a construção da aplicação web e [JasperReports](https://community.jaspersoft.com/project/jasperreports-library) para a geração de relatórios em PDF.
+
+java 17 e gradle nem esquenta que o wapper da conta
 
 As dependências principais incluem:
 
@@ -61,7 +63,7 @@ Para executar a aplicação, utilize o seguinte comando:
 ./gradlew bootRun
 ```
 
-A aplicação estará disponível em `http://localhost:8080`.
+A aplicação estará disponível em `http://localhost:7575/boletera`.
 
 Lembre-se de substituir os exemplos de parâmetros pelos valores reais desejados ao realizar as requisições.
 
