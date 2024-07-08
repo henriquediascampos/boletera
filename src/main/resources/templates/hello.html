@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Gerar PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Gerador de boleto</h2>
+        <form>
+            <div class="container-field">
+                <label for="referencia">Referência:</label>
+                <input type="text" id="referencia" name="referencia" required placeholder="nome do objeto que vai ser comprado" title="nome do objeto que vai ser comprado">
+                <span id="referencia_help"></span>
+            </div>
+
+            <div class="container-field">
+                <label for="emissor">Emissor:</label>
+                <input type="text" id="emissor" name="emissor" required placeholder="nome do comprador" title="nome do comprador">
+                <span id="emissor_help"></span>
+            </div>
+
+            <div class="container-field">
+                <label for="valor_total">Valor total:</label>
+                <input placeholder="R$ 0,00" type="text" id="valor_total" name="valor_total" required title="valor total do objeto a ser comprado">
+                <span id="valor_total_help"></span>
+            </div>
+
+            <div class="container-field">
+                <label for="total_parcelas">Número de parcelas: <span id="numero_total_parcelas">1</span></label>
+                <input value="1" type="range" min="1" max="99" id="total_parcelas" name="total_parcelas" required list="tickmarks">
+                <span id="total_parcelas_help"></span>
+                <datalist id="tickmarks">
+                    <option value="1">
+                    <option value="10">
+                    <option value="20">
+                    <option value="30">
+                    <option value="40">
+                    <option value="50">
+                    <option value="60">
+                    <option value="70">
+                    <option value="80">
+                    <option value="90">
+                    <option value="99">
+                </datalist>
+            </div>
+
+
+            <button type="submit" id="submit-button">Gerar PDF</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 80%;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+  }
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#total_parcelas {
+  cursor: pointer;
+}
+
+[id$="_help"] {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.container-field {
+  margin-bottom: 8px;
+}
